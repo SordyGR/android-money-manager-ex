@@ -1,4 +1,4 @@
-# MoneyManagerEx for Android
+# MoneyManagerEx for Android Sordy-Fork With added time field for new transactions
 
 See our homepage at [android.moneymanagerex.org](http://android.moneymanagerex.org/) for more user-oriented information.
 
@@ -59,3 +59,4 @@ To build the project, the following settings are recommended:
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=moneymanagerex/android-money-manager-ex&type=Date)](https://star-history.com/#moneymanagerex/android-money-manager-ex&Date)
+
