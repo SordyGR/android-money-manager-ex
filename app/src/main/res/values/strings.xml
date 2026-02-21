@@ -184,6 +184,7 @@
     <string name="add">Add</string>
     <string name="confirmDelete">Are you sure you want to delete the record?</string>
     <string name="date">Date</string>
+    <string name="time">Time</string> //Sordy
     <string name="delete">Delete</string>
     <string name="download">Download</string>
     <string name="edit">Edit</string>

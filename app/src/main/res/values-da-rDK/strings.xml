@@ -724,4 +724,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">Ændringsoversigt</string>
+    <string name="time">Time</string>
 </resources>

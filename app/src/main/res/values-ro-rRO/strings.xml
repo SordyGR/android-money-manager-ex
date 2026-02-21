@@ -611,4 +611,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">Jurnalul modificărilor</string>
+    <string name="time">Time</string>
 </resources>

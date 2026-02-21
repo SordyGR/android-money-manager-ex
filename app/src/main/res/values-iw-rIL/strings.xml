@@ -680,4 +680,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">יומן שינוים</string>
+    <string name="time">Time</string>
 </resources>

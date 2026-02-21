@@ -712,4 +712,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">Log-zapis promjena</string>
+    <string name="time">Time</string>
 </resources>

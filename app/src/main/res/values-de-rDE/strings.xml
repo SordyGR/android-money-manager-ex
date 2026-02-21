@@ -821,4 +821,5 @@
     <string name="changelog">Changelog</string>
     <string name="changelog_title">Wichtig! Was ist neu!!</string>
     <string name="changelog_1086">Neue Version 5.4\n- Neue Beta-Funktion für die Merge-Engine hinzugefügt. Versucht die Dateien zusammenzuführen, wenn beide geändert wurden. Aktivieren Sie diese Funktion unter „Einstellungen“ > „Synchronisieren“ > „Zusammenführen“.</string>
+    <string name="time">Time</string>
 </resources>

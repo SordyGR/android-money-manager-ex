@@ -750,4 +750,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">Sürüm Bilgileri</string>
+    <string name="time">Time</string>
 </resources>

@@ -28,6 +28,14 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.app.TimePickerDialog;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+import java.util.Calendar;
+import com.google.android.material.timepicker.MaterialTimePicker;
+import com.google.android.material.timepicker.TimeFormat;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.money.manager.ex.Constants;
@@ -135,7 +143,7 @@ public class AccountEditActivity
         // Compose layout
         setContentView(R.layout.activity_account_edit);
 
-//        showStandardToolbarActions();
+        //showStandardToolbarActions();
         setDisplayHomeAsUpEnabled(true);
 
         initializeControls();
@@ -290,6 +298,51 @@ public class AccountEditActivity
 
     private void initializeControls() {
         mViewHolder = new AccountEditViewHolder(this);
+
+        // Time picker (optional view)
+        if (mViewHolder.txtTime != null) {
+
+            mViewHolder.txtTime.setOnClickListener(v -> {
+
+                Toast.makeText(AccountEditActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+
+                Date currentDate = mAccount.getInitialDate();
+                if (currentDate == null) {
+                    currentDate = new Date();
+                    mAccount.setInitialDate(currentDate);
+                }
+
+                MmxDate currentValue = new MmxDate(currentDate);
+                int hour = currentValue.getHourOfDay();
+                int minute = currentValue.getMinuteOfHour();
+
+                TimePickerDialog.OnTimeSetListener listener = (view, hourOfDay, minuteOfHour) -> {
+                    Calendar cal = Calendar.getInstance();
+                    cal.setTime(mAccount.getInitialDate());
+                    cal.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                    cal.set(Calendar.MINUTE, minuteOfHour);
+                    cal.set(Calendar.SECOND, 0);
+                    cal.set(Calendar.MILLISECOND, 0);
+
+                    Date updatedDate = cal.getTime();
+                    mAccount.setInitialDate(updatedDate);
+
+                    java.text.DateFormat timeFormat =
+                            android.text.format.DateFormat.getTimeFormat(AccountEditActivity.this);
+                    mViewHolder.txtTime.setText(timeFormat.format(updatedDate));
+                };
+
+                new TimePickerDialog(
+                        AccountEditActivity.this,
+                        listener,
+                        hour,
+                        minute,
+                        android.text.format.DateFormat.is24HourFormat(AccountEditActivity.this)
+                ).show();
+            });
+
+        }
+
 
         // Initial balance.
 

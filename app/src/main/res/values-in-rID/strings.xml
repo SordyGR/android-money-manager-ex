@@ -680,4 +680,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">Catatan perubahan</string>
+    <string name="time">Time</string>
 </resources>

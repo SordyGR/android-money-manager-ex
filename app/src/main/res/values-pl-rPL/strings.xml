@@ -766,4 +766,5 @@
     <string name="forecast_remain">Prognoza Pozostałości</string>
     <!-- changelog -->
     <string name="changelog">Lista zmian</string>
+    <string name="time">Time</string>
 </resources>

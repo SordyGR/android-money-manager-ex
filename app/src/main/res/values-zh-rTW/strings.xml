@@ -682,4 +682,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">更新日誌</string>
+    <string name="time">Time</string>
 </resources>

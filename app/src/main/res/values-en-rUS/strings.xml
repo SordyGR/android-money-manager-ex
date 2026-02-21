@@ -791,4 +791,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">Changelog</string>
+    <string name="time">Time</string>
 </resources>

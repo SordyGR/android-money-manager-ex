@@ -17,6 +17,7 @@
 
 package com.money.manager.ex.account;
 
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -52,6 +53,7 @@ public class AccountEditViewHolder {
     public TextView txtInitialDate;
     public IconicsImageView previousDayButton;
     public IconicsImageView nextDayButton;
+    public RobotoTextView txtTime;
 
     public AccountEditViewHolder(AppCompatActivity parent) {
         edtAccountHeldAt = parent.findViewById(R.id.editTextAccountHeldAt);
@@ -73,6 +75,7 @@ public class AccountEditViewHolder {
         txtInitialDate = parent.findViewById(R.id.textViewDate);
         previousDayButton = parent.findViewById(R.id.previousDayButton);
         nextDayButton = parent.findViewById(R.id.nextDayButton);
+        txtTime = parent.findViewById(R.id.textViewTime);
     }
 }
 

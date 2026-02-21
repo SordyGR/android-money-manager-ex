@@ -689,4 +689,5 @@ Toque para marcar a transação como atrasada</string>
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">Registo de Alterações</string>
+    <string name="time">Time</string>
 </resources>

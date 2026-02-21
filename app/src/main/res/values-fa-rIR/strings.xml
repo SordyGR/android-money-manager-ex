@@ -215,6 +215,7 @@
     <!-- Create Database screen -->
     <!-- Settings -->
     <string name="per_database_settings">هر پایگاه داده</string>
+    <string name="time">Time</string>
     <!-- Notification Setting -->
     <!-- Builder button -->
     <!--- New navigation mode -->

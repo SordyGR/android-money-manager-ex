@@ -680,4 +680,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">لاگ تبدیل کریں</string>
+    <string name="time">Time</string>
 </resources>

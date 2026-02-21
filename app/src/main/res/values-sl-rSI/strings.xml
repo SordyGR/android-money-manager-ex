@@ -576,4 +576,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">Nespremenjen</string>
+    <string name="time">Time</string>
 </resources>

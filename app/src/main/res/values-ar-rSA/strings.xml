@@ -581,4 +581,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">سِجل التغييرات</string>
+    <string name="time">Time</string>
 </resources>

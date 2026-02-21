@@ -298,6 +298,7 @@
     <!-- Create Database screen -->
     <!-- Settings -->
     <string name="per_database_settings">데이터베이스별</string>
+    <string name="time">Time</string>
     <!-- Notification Setting -->
     <!-- Builder button -->
     <!--- New navigation mode -->

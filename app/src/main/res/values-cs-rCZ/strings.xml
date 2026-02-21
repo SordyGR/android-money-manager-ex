@@ -669,4 +669,5 @@
     <!-- Error Handling -->
     <!-- changelog -->
     <string name="changelog">Přehled změn</string>
+    <string name="time">Time</string>
 </resources>
