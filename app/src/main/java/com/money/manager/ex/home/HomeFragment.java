@@ -20,7 +20,9 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -126,6 +128,7 @@ public class HomeFragment
     private static final int REQUEST_BALANCE_ACCOUNT = 1;
 
     @Inject Lazy<InfoRepositorySql> infoRepositorySqlLazy;
+    @Inject Lazy<RecentDatabasesProvider> mDatabasesLazy;
 
     private CurrencyService mCurrencyService;
     private boolean mHideReconciled;
@@ -453,7 +456,18 @@ public class HomeFragment
 
             String dbPath = new AppSettings(activity).getDatabaseSettings().getDatabasePath();
             if (dbPath != null && !dbPath.isEmpty()) {
-                activity.getSupportActionBar().setSubtitle(Paths.get(dbPath).getFileName().toString());
+                DatabaseMetadata metadata = mDatabasesLazy != null ? mDatabasesLazy.get().get(dbPath) : null;
+                if (metadata != null && metadata.isRemoteSyncServer() && !TextUtils.isEmpty(metadata.remotePath)) {
+                    String remoteUri = metadata.remotePath;
+                    if (remoteUri.startsWith("https://")) {
+                        remoteUri = remoteUri.substring(8);
+                    } else if (remoteUri.startsWith("http://")) {
+                        remoteUri = remoteUri.substring(7);
+                    }
+                    activity.getSupportActionBar().setSubtitle(Uri.decode(remoteUri));
+                } else {
+                    activity.getSupportActionBar().setSubtitle(Paths.get(dbPath).getFileName().toString());
+                }
             } else {
                 activity.getSupportActionBar().setSubtitle(R.string.path_database_not_exists);
             }
