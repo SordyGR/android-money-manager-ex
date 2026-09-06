@@ -456,15 +456,11 @@ public class HomeFragment
 
             String dbPath = new AppSettings(activity).getDatabaseSettings().getDatabasePath();
             if (dbPath != null && !dbPath.isEmpty()) {
-                DatabaseMetadata metadata = mDatabasesLazy != null ? mDatabasesLazy.get().get(dbPath) : null;
+                DatabaseMetadata metadata = mDatabasesLazy.get().get(dbPath);
                 if (metadata != null && metadata.isRemoteSyncServer() && !TextUtils.isEmpty(metadata.remotePath)) {
-                    String remoteUri = metadata.remotePath;
-                    if (remoteUri.startsWith("https://")) {
-                        remoteUri = remoteUri.substring(8);
-                    } else if (remoteUri.startsWith("http://")) {
-                        remoteUri = remoteUri.substring(7);
-                    }
-                    activity.getSupportActionBar().setSubtitle(Uri.decode(remoteUri));
+                    String type = metadata.getRemoteServerType(); // "pocketbase"
+                    String url  = metadata.getRemoteURL();         // "server" or "server:8090"
+                    activity.getSupportActionBar().setSubtitle(type + " @ " + url);
                 } else {
                     activity.getSupportActionBar().setSubtitle(Paths.get(dbPath).getFileName().toString());
                 }
